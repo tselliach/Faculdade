@@ -31,4 +31,21 @@ public class PrimeiraAula {
 		
 		return PrimeiraAula.instancia;
 	}
+	public static void main(String[] args){
+		
+		PrimeiraAula obj = null;		
+		double resultado = 0.0;
+		double esperado = 0.0;
+		
+		obj = PrimeiraAula.getInstancia();
+		resultado = obj.somaTotal(null);
+		esperado = Double.NaN;
+		if(Double.compare(resultado,esperado)==0){
+			System.out.println("Teste ok");
+			
+		}
+		else{
+			System.out.println("Teste nok");
+		}
+	}
 }
