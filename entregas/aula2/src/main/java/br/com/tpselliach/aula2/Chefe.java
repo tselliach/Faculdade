@@ -1,4 +1,4 @@
-package br.com.tpselliach.aula3;
+package br.com.tpselliach.aula2;
 
 public class Chefe extends Funcionario {
 

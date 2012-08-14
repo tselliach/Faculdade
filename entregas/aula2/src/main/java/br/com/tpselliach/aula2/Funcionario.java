@@ -1,4 +1,4 @@
-package br.com.tpselliach.aula3;
+package br.com.tpselliach.aula2;
 
 public class Funcionario extends Pessoa { 
 	private Integer id;
