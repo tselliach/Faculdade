@@ -18,7 +18,7 @@ public class MinhaListaImp<Tipo> implements MinhaLista<Tipo> {
 	private Nodo<Tipo> buscarUltimoNodo() {
 		int tamanho = tamanho();
 		Nodo<Tipo> resultado = buscarNodo(tamanho -1);
-		return null;
+		return resultado;
 	}
 
 	private Nodo<Tipo> buscarNodo(int posicao) {
