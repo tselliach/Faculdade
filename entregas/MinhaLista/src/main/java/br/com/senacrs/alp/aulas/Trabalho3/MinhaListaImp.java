@@ -1,4 +1,4 @@
-package br.com.senacrs.alp.aulas.MinhaLista;
+package br.com.senacrs.alp.aulas.Trabalho3;
 
 public class MinhaListaImp<Tipo> implements MinhaLista<Tipo> {
 	private Nodo<Tipo> inicio = null;
