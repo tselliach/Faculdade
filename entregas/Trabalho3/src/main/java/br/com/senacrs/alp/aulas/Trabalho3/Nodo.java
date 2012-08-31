@@ -4,6 +4,7 @@ public class Nodo<Tipo extends Object> {
 	private Tipo valor;
 	private Nodo<Tipo> proximo;
 	public Nodo(Tipo valor) {
+		this.valor = valor;
 		
 	}
 	public Tipo getValor() {

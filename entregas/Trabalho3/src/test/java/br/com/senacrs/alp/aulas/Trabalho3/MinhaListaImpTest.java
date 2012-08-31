@@ -2,6 +2,8 @@ package br.com.senacrs.alp.aulas.Trabalho3;
 
 import static org.junit.Assert.*;
 
+import java.util.Random;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -43,38 +45,53 @@ public class MinhaListaImpTest {
 		}
 		
 	}
+	 @Test
+     public void testSufixar() {
+             
+             MinhaListaImp <String> obj = null;
+             String valor = null;
+             String sufixo = null;
+             
+             obj = new MinhaListaImp<String>("Inicio");
+             valor = "valor";
+             obj.sufixar(valor);
+             sufixo = obterSufixo(obj);
+             Assert.assertEquals(valor, sufixo);
+             
+     }
+
+             
+     private String obterSufixo(MinhaListaImp<String> obj) {
+             String resultado = null;
+             Nodo<String> nodo = null;
+             
+             nodo = obj.getInicio();
+             while (nodo.getProximo() != null){
+                     nodo = nodo.getProximo();
+             }
+             resultado = nodo.getValor();
+             
+             return resultado;
+     }
+
 	@Test
-	public void testSufixar() {
+public void testPrefixar() {
 		
 		MinhaListaImp <String> obj = null;
 		String valor = null;
-		String sufixo = null;
-		
-		obj = new MinhaListaImp<String>("Inicio");
-		valor = "valor";
-		obj.sufixar(valor);
-		sufixo = obterSufixo(obj);
-		Assert.assertEquals(valor, sufixo);
-		
-
-	}
-
-	private String obterSufixo(MinhaListaImp<String> obj) {
-		String resultado = null;
 		Nodo<String> nodo = null;
 		
-		nodo = obj.getInicio();
-		while (nodo.getProximo() != null){
-			nodo = nodo.getProximo();
-		}
-		resultado = "valor";
 		
-		return resultado;
-	}
-
-	@Test
-	public void testPrefixar() {
-		fail("Not yet implemented");
+		obj = new MinhaListaImp<String>("Inicio");
+			
+		valor = "Teste";
+		obj.prefixar(valor);
+		
+		nodo = obj.getInicio();
+		String inicio = nodo.getValor();
+		
+		Assert.assertEquals(valor, inicio);
+		
 	}
 
 	@Test
@@ -91,10 +108,55 @@ public class MinhaListaImpTest {
 	public void testRemover() {
 		fail("Not yet implemented");
 	}
-
+ 
 	@Test
-	public void testTamanho() {
-		fail("Not yet implemented");
-	}
+	public void testTamanhozero() {
+		MinhaListaImp<String> obj = null;
+		obj = new MinhaListaImp<String>("Inicio");
+		int tamanho = obj.tamanho();
+		if(tamanho > 0){
+			Assert.assertTrue(true);	
+		}
+		else{
+			fail();
+		}
+				
+		}
+	@Test
+public void testTamanho() {
+		
+		MinhaListaImp<String> obj = null;
+        obj = new MinhaListaImp<String>("Inicio");
+        int qtd;
+        int tamanho;
+        
+        Random randomGenerator = new Random();
+        qtd = randomGenerator.nextInt(20);
+        
+        for (int i = 1; i <= qtd; i++) {
+        	obj.sufixar("caixa");
+        	
+        }
+        
+        qtd++;
+        
+        tamanho = obj.tamanho();
+        
+        Assert.assertEquals(qtd, tamanho);
+        
+	} 
+	
+	@Test
+	public void testTamanhonull() {
+		MinhaListaImp<String> obj = null;
+		try{
+		obj = new MinhaListaImp<String>(null);
+		fail();
+		}catch (IllegalArgumentException e){
+			Assert.assertTrue(true);
+		}
+			
+		}
+		
 
 }
