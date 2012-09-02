@@ -3,13 +3,8 @@ package br.com.senacrs.alp.aulas.Trabalho3;
 public class MinhaListaImp<Tipo> implements MinhaLista<Tipo> {
 	private Nodo<Tipo> inicio = null;
 	
-	public MinhaListaImp(Tipo valorInicio) {
-		if(valorInicio == null){
-			throw new IllegalArgumentException();
-		}
-		else{
-			this.inicio = new Nodo<Tipo>(valorInicio);	
-		}
+	public MinhaListaImp() {
+		
 			
 		
 	}
@@ -86,7 +81,7 @@ public class MinhaListaImp<Tipo> implements MinhaLista<Tipo> {
 
 	public int tamanho() {
 			Nodo<Tipo> nodo = getInicio();
-			int resultado = 1;
+			int resultado = 0;
 			while(nodo.getProximo() != null){
 				nodo = nodo.getProximo();
 				resultado ++;

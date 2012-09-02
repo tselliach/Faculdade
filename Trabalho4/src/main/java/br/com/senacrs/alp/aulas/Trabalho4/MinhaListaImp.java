@@ -3,16 +3,10 @@ package br.com.senacrs.alp.aulas.Trabalho4;
 public class MinhaListaImp<Tipo> implements MinhaLista<Tipo> {
 	private Nodo<Tipo> inicio = null;
 	
-	public MinhaListaImp(Tipo valorInicio) {
-		if(valorInicio == null){
-			throw new IllegalArgumentException();
-		}
-		else{
-			this.inicio = new Nodo<Tipo>(valorInicio);	
-		}
+	
 			
 		
-	}
+	
 
 	public void sufixar(Tipo valor) {
 		
