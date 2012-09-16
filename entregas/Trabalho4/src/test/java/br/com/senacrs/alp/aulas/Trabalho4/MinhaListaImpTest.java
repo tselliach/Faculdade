@@ -29,22 +29,13 @@ public class MinhaListaImpTest {
 		String arg = null;
 		
 		arg = "valor valido";
-		obj = new MinhaListaImp<String>(arg);
+		obj = new MinhaListaImp<String>();
 		Assert.assertNotNull(obj);
 		
 	}
-	@Test
-	public void testMinhaListaImpNull() {
+	
 		
-		MinhaListaImp<String> obj = null;
-		try{
-		obj = new MinhaListaImp<String>(null);
-		fail();
-		}catch (IllegalArgumentException e){
-			Assert.assertTrue(true);//verifica se o argumento é verdadeiro
-		}
-		
-	}
+	
 	 @Test
      public void testSufixar() {
              
@@ -52,7 +43,7 @@ public class MinhaListaImpTest {
              String valor = null;
              String sufixo = null;
              
-             obj = new MinhaListaImp<String>("Inicio");
+             obj = new MinhaListaImp<String>();
              valor = "valor";
              obj.sufixar(valor);
              sufixo = obterSufixo(obj);
@@ -82,7 +73,7 @@ public void testPrefixar() {
 		Nodo<String> nodo = null;
 		
 		
-		obj = new MinhaListaImp<String>("Inicio");
+		obj = new MinhaListaImp<String>();
 			
 		valor = "Teste";
 		obj.prefixar(valor);
@@ -112,7 +103,7 @@ public void testPrefixar() {
 	@Test
 	public void testTamanhozero() {
 		MinhaListaImp<String> obj = null;
-		obj = new MinhaListaImp<String>("Inicio");
+		obj = new MinhaListaImp<String>();
 		int tamanho = obj.tamanho();
 		if(tamanho > 0){
 			Assert.assertTrue(true);	
@@ -126,19 +117,17 @@ public void testPrefixar() {
 public void testTamanho() {
 		
 		MinhaListaImp<String> obj = null;
-        obj = new MinhaListaImp<String>("Inicio");
+        obj = new MinhaListaImp<String>();
         int qtd;
         int tamanho;
-        
+          
         Random randomGenerator = new Random();
         qtd = randomGenerator.nextInt(20);
         
         for (int i = 1; i <= qtd; i++) {
         	obj.sufixar("caixa");
-        	
-        }
         
-        qtd++;
+        }         
         
         tamanho = obj.tamanho();
         
@@ -146,17 +135,8 @@ public void testTamanho() {
         
 	} 
 	
-	@Test
-	public void testTamanhonull() {
-		MinhaListaImp<String> obj = null;
-		try{
-		obj = new MinhaListaImp<String>(null);
-		fail();
-		}catch (IllegalArgumentException e){
-			Assert.assertTrue(true);
-		}
 			
-		}
+}
 		
 
-}
+

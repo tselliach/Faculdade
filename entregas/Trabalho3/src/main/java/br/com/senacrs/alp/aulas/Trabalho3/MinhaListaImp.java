@@ -4,8 +4,7 @@ public class MinhaListaImp<Tipo> implements MinhaLista<Tipo> {
 	private Nodo<Tipo> inicio = null;
 	
 	public MinhaListaImp() {
-		
-			
+				
 		
 	}
 
@@ -81,10 +80,15 @@ public class MinhaListaImp<Tipo> implements MinhaLista<Tipo> {
 
 	public int tamanho() {
 			Nodo<Tipo> nodo = getInicio();
-			int resultado = 0;
-			while(nodo.getProximo() != null){
+			
+			int resultado = 1;
+			if(nodo.getProximo() == null)
+				resultado = 0;
+			else{
+				while(nodo.getProximo() != null){			
 				nodo = nodo.getProximo();
 				resultado ++;
+			}
 			}
 		return resultado;
 	}

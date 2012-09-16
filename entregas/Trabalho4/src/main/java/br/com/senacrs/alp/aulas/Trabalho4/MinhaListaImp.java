@@ -1,21 +1,17 @@
 package br.com.senacrs.alp.aulas.Trabalho4;
 
 public class MinhaListaImp<Tipo> implements MinhaLista<Tipo> {
-	private Nodo<Tipo> inicio = null;
-	
-	
-			
+	private Nodo<Tipo> inicio;
+	public MinhaListaImp (){
 		
-	
-
+		this.inicio = new Nodo<Tipo>(null);
+		}	
 	public void sufixar(Tipo valor) {
-		
 		Nodo<Tipo> ultimo = buscarUltimoNodo();
 		Nodo<Tipo> novoUltimo = new Nodo<Tipo>(valor);
 		ultimo.setProximo(novoUltimo);
 		
 	}
-
 	private Nodo<Tipo> buscarUltimoNodo() {
 		int tamanho = tamanho();
 		Nodo<Tipo> resultado = buscarNodo(tamanho -1);
@@ -31,10 +27,12 @@ public class MinhaListaImp<Tipo> implements MinhaLista<Tipo> {
 	}
 
 	public void prefixar(Tipo valor) {
-		Nodo<Tipo> primeiro = buscarPrimeiroNodo();
-		Nodo<Tipo> novoPrimeiro = new Nodo<Tipo>(valor);
-		novoPrimeiro.setProximo(primeiro);
-		setInicio(novoPrimeiro);
+		Nodo<Tipo> primeiro = getInicio();
+		Nodo<Tipo> nodo = new Nodo<Tipo>(valor);
+		Nodo<Tipo> inicioReal=inicio.getProximo();
+		nodo.setProximo(inicioReal);
+		nodo.setProximo(primeiro);
+		
 		
 	}
 
@@ -54,8 +52,7 @@ public class MinhaListaImp<Tipo> implements MinhaLista<Tipo> {
 	}
 
 	public Tipo buscar(int posicao) {
-		Nodo<Tipo> nodo = buscarNodo(posicao);
-		
+		Nodo<Tipo> nodo = buscarNodo(posicao);		
 		return nodo.getValor();
 	}
 
@@ -74,13 +71,12 @@ public class MinhaListaImp<Tipo> implements MinhaLista<Tipo> {
 		Nodo<Tipo> nodo = anterior.getProximo();
 		Nodo<Tipo> proximo = nodo.getProximo();
 		anterior.setProximo(proximo);
-		
 		return nodo.getValor();
 	}
 
 	public int tamanho() {
 			Nodo<Tipo> nodo = getInicio();
-			int resultado = 1;
+			int resultado = 0;
 			while(nodo.getProximo() != null){
 				nodo = nodo.getProximo();
 				resultado ++;

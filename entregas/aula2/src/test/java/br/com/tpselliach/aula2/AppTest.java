@@ -1,4 +1,4 @@
-package br.com.tpselliach.aula3;
+package br.com.tpselliach.aula2;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
