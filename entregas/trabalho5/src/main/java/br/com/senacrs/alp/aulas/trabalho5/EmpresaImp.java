@@ -45,9 +45,9 @@ public class EmpresaImp implements Empresa {
 			FuncionarioImp funcaoImp;
 			int salario = 0;
 			int salarioTotal = 0;
-			int tamanhoLista = listaFunc.tamanho();
 			
-			for (int i = 0; i < tamanhoLista; i++) {
+			
+			for (int i = 0; i < listaFunc.tamanho(); i++) {
 				
 				funcao = listaFunc.buscar(i);
 				funcaoImp = cast(funcao);
