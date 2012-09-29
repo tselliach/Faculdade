@@ -1,4 +1,4 @@
-package br.com.senacrs.alp.aulas.trabalho5;
+package br.com.senacrs.alp.aulas.trabalho8;
 
 import static org.junit.Assert.*;
 
@@ -9,9 +9,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.senacrs.alp.aulas.trabalho5.Empresa;
-import br.com.senacrs.alp.aulas.trabalho5.Funcionario;
-import br.com.senacrs.alp.aulas.trabalho5.FuncionarioFactory;
+import br.com.senacrs.alp.aulas.trabalho8.Empresa;
+import br.com.senacrs.alp.aulas.trabalho8.Funcionario;
+import br.com.senacrs.alp.aulas.trabalho8.FuncionarioFactory;
+import br.com.senacrs.alp.aulas.trabalho8.FuncionarioFactoryImp;
 
 public class EmpresaTest {
 
@@ -22,8 +23,8 @@ public class EmpresaTest {
 	@Before
 	public void setUp() throws Exception {
 
-		this.empresa = new EmpresaImpSet(); // substituir por new EmpresaImp();
-		this.factory = FuncionarioFactoryImp.getInstancia(); // colocar seu
+		this.empresa = new EmpresaImp(); // substituir por new EmpresaImp();
+		this.factory = new FuncionarioFactoryImp(); // colocar seu
 								// FuncionarioFactoryImpl.getInstancia();
 	}
 

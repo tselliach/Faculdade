@@ -12,5 +12,10 @@ public class Pessoa {
 		this.nome = nome;
 	}
 	
+	public void testeCast(){
+		PessoaTesteCast cast = new PessoaTesteCast();
+		
+	}
+	
 	
 }

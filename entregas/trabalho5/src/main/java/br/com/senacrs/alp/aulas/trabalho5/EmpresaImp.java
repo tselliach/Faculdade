@@ -34,6 +34,7 @@ public class EmpresaImp implements Empresa {
 					resultado = funcao;
 					break;
 				}
+					
 			}
 			return resultado;
 		}
